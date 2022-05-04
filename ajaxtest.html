@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript">
+function loadDoc()
+{
+  var xhr=new XMLHttpRequest();
+  
+  xhr.onreadystatechange=function() {
+  	if (xhr.readyState==4 && xhr.status==200) {
+    	document.getElementById("myDiv").innerHTML=xhr.responseText;
+    }
+  }
+  xhr.open("GET","users_ajax.php",true);
+  xhr.send();
+}
+</script>
+</head>
+<body>
+
+<div id="myDiv"><h2>Let AJAX change this text</h2></div>
+<button type="button" id="button">Change Content</button>
+
+<script type="text/javascript">
+document.getElementById("button").addEventListener("click", loadDoc, false);
+</script>
+
+</body>
+</html>

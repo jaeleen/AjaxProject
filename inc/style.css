@@ -1,0 +1,38 @@
+body {
+	font-family: helvetica, sans-serif;
+}
+
+span.hide_error{visibility:hidden;}
+
+span.show_error{color:red;}
+
+#tooltip {
+	border: 1px solid black;
+	padding: 3px;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+}
+
+p.show_tooltip {
+	visibility:visible;
+}
+
+p.hide_tooltip {
+	visibility:hidden;
+}
+
+p.order {
+	border: 1px solid black;
+	padding: 3px;
+	background: #CCCCCC;
+}
+
+p.error {
+	color:red;
+}
+
+p.user {
+	border: 1px solid black;
+	background: #CCCCCC;
+}

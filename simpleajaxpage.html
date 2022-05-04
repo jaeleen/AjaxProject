@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang = "en">
+	<head>
+		<title>AJAX Test</title>
+		<meta charset = "utf-8" />
+		<script type = "text/javascript">
+			function changeText (event) {
+			
+				var xhr = new XMLHttpRequest();
+				
+				xhr.onreadystatechange = function () {
+					if (xhr.readyState == 4 && xhr.status == 200) {
+						event.target.innerHTML = xhr.responseText;
+					}
+				}
+				
+				xhr.open("GET", "simpleajax.php?id=" + event.clientX, true);
+				xhr.send();			
+			}
+			
+		</script>
+	</head>
+	<body>
+		<h3>AJAX Test</h3>
+		
+		<p id="changeme">This text will change.</p>
+		
+		<p id="changemetoo">This text will change.</p>
+		
+		<script type = "text/javascript">
+		
+		document.getElementById("changeme").addEventListener("click", changeText, false);
+		document.getElementById("changemetoo").addEventListener("click", changeText, false);
+
+		</script>
+	
+	</body>
+</html>
